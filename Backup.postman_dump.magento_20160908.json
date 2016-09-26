@@ -1,0 +1,517 @@
+{
+	"version": 1,
+	"collections": [
+		{
+			"id": "39532dd8-982d-21b2-55d1-060048a50b1b",
+			"name": "Magento Products",
+			"description": "",
+			"order": [
+				"4f5d39fa-61b4-d7f9-3d5c-bce257d16bba",
+				"487554bb-52a9-8628-4bf2-a696b6fe5788"
+			],
+			"folders": [],
+			"timestamp": 1473285363670,
+			"synced": false,
+			"remote_id": 0,
+			"owner": 0,
+			"sharedWithTeam": false,
+			"subscribed": false,
+			"remoteLink": "",
+			"remoteLinkUpdatedAt": null,
+			"public": false,
+			"createdAt": 1473285363670,
+			"updatedAt": 1473307497472,
+			"write": true,
+			"published": false,
+			"favorite": true,
+			"permissions": {},
+			"syncedPermissions": {},
+			"requests": [
+				{
+					"id": "487554bb-52a9-8628-4bf2-a696b6fe5788",
+					"headers": "Authorization: OAuth oauth_consumer_key=\"8d7e689aea4761b9b2c049667c283217\",oauth_token=\"ed4ed5b7bd55d58679e094ad92dd72e5\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1473350024\",oauth_nonce=\"yI1hZ4\",oauth_version=\"1.0\",oauth_signature=\"MIaDMTkrORosShVu54Bs5pGvHXA%3D\"\n",
+					"url": "{{base_uri}}/{{base_path}}/products?limit={{prod_limit}}",
+					"preRequestScript": null,
+					"pathVariables": {},
+					"method": "GET",
+					"data": null,
+					"dataMode": "params",
+					"version": 2,
+					"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\nvar jsonData = JSON.parse(responseBody);\n\nconsole.log(environment.prod_limit);\nconsole.log(Object.keys(jsonData))\n// Environment, global varstored as strings. storing objects/arrays, be sure to JSON.stringify() them before storing, and JSON.parse() them while retrieving.\n//globals & envs stored as strings so parseInt(globals.stress); \n\ntests[\"Product count equals limit\"] = Object.keys(jsonData).length === parseInt(environment.prod_limit);",
+					"currentHelper": "oAuth1",
+					"helperAttributes": {
+						"id": "oAuth1",
+						"consumerKey": "8d7e689aea4761b9b2c049667c283217",
+						"consumerSecret": "1b9bb45ee8a93bf293f15b9e7fb95c9b",
+						"token": "ed4ed5b7bd55d58679e094ad92dd72e5",
+						"tokenSecret": "fc9fb9bd83048bccda04d5481c3030a1",
+						"signatureMethod": "HMAC-SHA1",
+						"timestamp": "",
+						"nonce": "",
+						"version": "1.0",
+						"realm": "",
+						"encodeSignature": false,
+						"header": true,
+						"includeEmpty": false,
+						"saveToRequest": true
+					},
+					"time": 1473350487726,
+					"name": "products with limit",
+					"description": "test limit filter",
+					"collectionId": "39532dd8-982d-21b2-55d1-060048a50b1b",
+					"responses": []
+				},
+				{
+					"id": "4f5d39fa-61b4-d7f9-3d5c-bce257d16bba",
+					"headers": "Authorization: OAuth oauth_consumer_key=\"8d7e689aea4761b9b2c049667c283217\",oauth_token=\"ed4ed5b7bd55d58679e094ad92dd72e5\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1473307460\",oauth_nonce=\"i3t3MO\",oauth_version=\"1.0\",oauth_signature=\"dkJj1jP2rjSPHhlT4yFiwTXiGpM%3D\"\n",
+					"url": "{{base_uri}}/{{base_path}}/products",
+					"preRequestScript": null,
+					"pathVariables": {},
+					"method": "GET",
+					"data": null,
+					"dataMode": "params",
+					"version": 2,
+					"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
+					"currentHelper": "oAuth1",
+					"helperAttributes": {
+						"id": "oAuth1",
+						"consumerKey": "8d7e689aea4761b9b2c049667c283217",
+						"consumerSecret": "1b9bb45ee8a93bf293f15b9e7fb95c9b",
+						"token": "ed4ed5b7bd55d58679e094ad92dd72e5",
+						"tokenSecret": "fc9fb9bd83048bccda04d5481c3030a1",
+						"signatureMethod": "HMAC-SHA1",
+						"timestamp": "",
+						"nonce": "",
+						"version": "1.0",
+						"realm": "",
+						"encodeSignature": false,
+						"header": true,
+						"includeEmpty": false,
+						"saveToRequest": true
+					},
+					"time": 1473308876176,
+					"name": "products",
+					"description": "Get list of products, starts on page 0, with a default limit",
+					"collectionId": "39532dd8-982d-21b2-55d1-060048a50b1b",
+					"responses": []
+				}
+			]
+		},
+		{
+			"id": "da1dbfd1-ef10-d4f7-3321-24cfedf826a7",
+			"name": "Magento 1.9 Oauth1.0a - Authorization",
+			"description": "Process to get Oauth Access Token/secret",
+			"order": [
+				"0324d91b-3230-9047-427b-a388f8b07ac9",
+				"cc0a124c-3cf0-ceb6-f3a8-32d42b56a5e1",
+				"763ac1a7-0d1f-7085-db19-c921a637cdb3",
+				"14737f9f-dc3a-7c7f-87fa-079315e356f8",
+				"cd404c05-3115-89a1-97fd-5d5fa37208c9"
+			],
+			"folders": [],
+			"timestamp": 1473284985288,
+			"synced": false,
+			"remote_id": 0,
+			"owner": 0,
+			"sharedWithTeam": false,
+			"subscribed": false,
+			"remoteLink": "",
+			"remoteLinkUpdatedAt": null,
+			"public": false,
+			"createdAt": 1473284985288,
+			"updatedAt": 1473285018494,
+			"write": true,
+			"published": false,
+			"favorite": true,
+			"permissions": {},
+			"syncedPermissions": {},
+			"requests": [
+				{
+					"id": "0324d91b-3230-9047-427b-a388f8b07ac9",
+					"headers": "",
+					"url": "{{base_uri}}/oauth/initiate?oauth_callback=http://httpbin.org/get&oauth_consumer_key=8d7e689aea4761b9b2c049667c283217&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1471555247&oauth_nonce=N48mNT&oauth_version=1.0&oauth_signature=044MGaUuYRx24D7xKDiykZ916ek=",
+					"preRequestScript": null,
+					"pathVariables": {},
+					"method": "GET",
+					"data": null,
+					"dataMode": "params",
+					"version": 2,
+					"tests": null,
+					"currentHelper": "oAuth1",
+					"helperAttributes": {
+						"id": "oAuth1",
+						"consumerKey": "8d7e689aea4761b9b2c049667c283217",
+						"consumerSecret": "1b9bb45ee8a93bf293f15b9e7fb95c9b",
+						"token": "",
+						"tokenSecret": "",
+						"signatureMethod": "HMAC-SHA1",
+						"timestamp": 1471555247,
+						"nonce": "N48mNT",
+						"version": "1.0",
+						"realm": "",
+						"encodeSignature": false,
+						"header": false,
+						"includeEmpty": false,
+						"saveToRequest": true
+					},
+					"time": 1473306976498,
+					"name": "Step 1: oauth1.0a initalte",
+					"description": "Step 1: Req OAuth token and secret  ooath/initiate\noauth_callback url httpbin.org\n\n",
+					"collectionId": "da1dbfd1-ef10-d4f7-3321-24cfedf826a7",
+					"responses": []
+				},
+				{
+					"id": "14737f9f-dc3a-7c7f-87fa-079315e356f8",
+					"headers": "",
+					"url": "{{base_uri}}/admin/oauth_authorize/confirm?oauth_token=8fc99949dca05db37cabbc9127f90d28",
+					"preRequestScript": null,
+					"pathVariables": {},
+					"method": "GET",
+					"data": null,
+					"dataMode": "params",
+					"version": 2,
+					"tests": null,
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1473307095232,
+					"name": "Step 4: Oauth1.0a Man Confirm Verifier",
+					"description": "Step 4: Confirm the authorization\n/admin/oauth_authorize/confirm\nNOTE: this uses callback_url from step 1: http://httpbin/get\nI guess that echos back to postman???\ngrab: oauth_verifier",
+					"collectionId": "da1dbfd1-ef10-d4f7-3321-24cfedf826a7",
+					"responses": []
+				},
+				{
+					"id": "763ac1a7-0d1f-7085-db19-c921a637cdb3",
+					"headers": "",
+					"url": "{{base_uri}}/admin/oauth_authorize?oauth_token=8fc99949dca05db37cabbc9127f90d28",
+					"preRequestScript": null,
+					"pathVariables": {},
+					"method": "POST",
+					"data": [
+						{
+							"key": "form_key",
+							"value": "M2iJKVAdcH9vDfiT",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "login[username]",
+							"value": "timr",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "login[password]",
+							"value": "docker123",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataMode": "params",
+					"version": 2,
+					"tests": null,
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1473307064644,
+					"name": "Step 3:  Oauth1.0a User Login",
+					"description": "Step 3:  /admin/oauth_authorize\noauth_token from step 2\nNOTE: This returns a login page!\nView Source and grab for_key hidden input value",
+					"collectionId": "da1dbfd1-ef10-d4f7-3321-24cfedf826a7",
+					"responses": []
+				},
+				{
+					"id": "cc0a124c-3cf0-ceb6-f3a8-32d42b56a5e1",
+					"headers": "",
+					"url": "{{base_uri}}/admin/oauth_authorize?oauth_consumer_key=8d7e689aea4761b9b2c049667c283217&oauth_token=8fc99949dca05db37cabbc9127f90d28&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1471505974&oauth_nonce=mCs4Q0&oauth_version=1.0&oauth_signature=+li5IFbcWRZr9CMwUGZbVX035pI=",
+					"preRequestScript": null,
+					"pathVariables": {},
+					"method": "GET",
+					"data": null,
+					"dataMode": "params",
+					"version": 2,
+					"tests": null,
+					"currentHelper": "normal",
+					"helperAttributes": {},
+					"time": 1473307007224,
+					"name": "Step 2: Oauth1.0a",
+					"description": "Step 2: use step 1 oauth_token and oauth_token_secret\nNOTE: these are temporary values\nNOTE: these values are needed later in the process - save them",
+					"collectionId": "da1dbfd1-ef10-d4f7-3321-24cfedf826a7",
+					"responses": []
+				},
+				{
+					"id": "cd404c05-3115-89a1-97fd-5d5fa37208c9",
+					"headers": "",
+					"url": "{{base_uri}}/oauth/token?oauth_verifier=343814a97c5607882745363b95f8b78a&oauth_consumer_key=8d7e689aea4761b9b2c049667c283217&oauth_token=8fc99949dca05db37cabbc9127f90d28&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1471557320&oauth_nonce=fMbToP&oauth_version=1.0&oauth_signature=MIaF2icMDuN/xglr1wsVdZ8hHds=",
+					"preRequestScript": null,
+					"pathVariables": {},
+					"method": "GET",
+					"data": null,
+					"dataMode": "params",
+					"version": 2,
+					"tests": null,
+					"currentHelper": "oAuth1",
+					"helperAttributes": {
+						"id": "oAuth1",
+						"consumerKey": "8d7e689aea4761b9b2c049667c283217",
+						"consumerSecret": "1b9bb45ee8a93bf293f15b9e7fb95c9b",
+						"token": "8fc99949dca05db37cabbc9127f90d28",
+						"tokenSecret": "1b7dee6b89c8d000250427ec4c76ede9",
+						"signatureMethod": "HMAC-SHA1",
+						"timestamp": 1471557320,
+						"nonce": "fMbToP",
+						"version": "1.0",
+						"realm": "",
+						"encodeSignature": false,
+						"header": false,
+						"includeEmpty": false,
+						"saveToRequest": true
+					},
+					"time": 1473307107146,
+					"name": "Step 5: Oauth1.0a Access Token",
+					"description": "Step 5: /oauth/token  verify, get your perminent tokens\noauth_verifier as param",
+					"collectionId": "da1dbfd1-ef10-d4f7-3321-24cfedf826a7",
+					"responses": []
+				}
+			]
+		},
+		{
+			"id": "f838a2f5-50f8-083e-4dd5-918e25b5999d",
+			"name": "Magento Customers",
+			"description": "",
+			"order": [
+				"f650b623-824e-e847-3771-66688b20a669",
+				"f1e3639a-ad27-3cf1-a9a7-9ffc37417558",
+				"b71806b4-fb24-213f-1d17-0e8947283bcd"
+			],
+			"folders": [],
+			"timestamp": 1471553617177,
+			"synced": false,
+			"remote_id": 0,
+			"owner": 0,
+			"sharedWithTeam": false,
+			"subscribed": false,
+			"remoteLink": "",
+			"remoteLinkUpdatedAt": null,
+			"public": false,
+			"createdAt": 1471553617177,
+			"updatedAt": 1473285435074,
+			"write": true,
+			"published": false,
+			"favorite": true,
+			"permissions": {},
+			"syncedPermissions": {},
+			"requests": [
+				{
+					"id": "b71806b4-fb24-213f-1d17-0e8947283bcd",
+					"headers": "Authorization: OAuth oauth_consumer_key=\"8d7e689aea4761b9b2c049667c283217\",oauth_token=\"ed4ed5b7bd55d58679e094ad92dd72e5\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1473306870\",oauth_nonce=\"hoZvbT\",oauth_version=\"1.0\",oauth_signature=\"zxSyjuRbbdWHUN9mD2%2FYf2it9vk%3D\"\n",
+					"url": "{{base_uri}}/{{base_path}}/customers/addresses/{{address_id}}",
+					"preRequestScript": null,
+					"pathVariables": {},
+					"method": "GET",
+					"data": null,
+					"dataMode": "params",
+					"version": 2,
+					"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
+					"currentHelper": "oAuth1",
+					"helperAttributes": {
+						"id": "oAuth1",
+						"consumerKey": "8d7e689aea4761b9b2c049667c283217",
+						"consumerSecret": "1b9bb45ee8a93bf293f15b9e7fb95c9b",
+						"token": "ed4ed5b7bd55d58679e094ad92dd72e5",
+						"tokenSecret": "fc9fb9bd83048bccda04d5481c3030a1",
+						"signatureMethod": "HMAC-SHA1",
+						"timestamp": "",
+						"nonce": "",
+						"version": "1.0",
+						"realm": "",
+						"encodeSignature": false,
+						"header": true,
+						"includeEmpty": false,
+						"saveToRequest": true
+					},
+					"time": 1473308870562,
+					"name": "address by addr_id",
+					"description": "Get an address BY (address) entity_id",
+					"collectionId": "f838a2f5-50f8-083e-4dd5-918e25b5999d",
+					"responses": []
+				},
+				{
+					"id": "f1e3639a-ad27-3cf1-a9a7-9ffc37417558",
+					"headers": "Authorization: OAuth oauth_consumer_key=\"8d7e689aea4761b9b2c049667c283217\",oauth_token=\"ed4ed5b7bd55d58679e094ad92dd72e5\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1473354341\",oauth_nonce=\"6SxEPz\",oauth_version=\"1.0\",oauth_signature=\"OjkFBoym0ZfCWrgweJ1x7cMkRiA%3D\"\n",
+					"url": "{{base_uri}}/{{base_path}}/customers/{{customer_id}}/addresses",
+					"preRequestScript": null,
+					"pathVariables": {},
+					"method": "GET",
+					"data": null,
+					"dataMode": "params",
+					"version": 2,
+					"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Response time is less than 300ms\"] = responseTime < 300;",
+					"currentHelper": "oAuth1",
+					"helperAttributes": {
+						"id": "oAuth1",
+						"consumerKey": "8d7e689aea4761b9b2c049667c283217",
+						"consumerSecret": "1b9bb45ee8a93bf293f15b9e7fb95c9b",
+						"token": "ed4ed5b7bd55d58679e094ad92dd72e5",
+						"tokenSecret": "fc9fb9bd83048bccda04d5481c3030a1",
+						"signatureMethod": "HMAC-SHA1",
+						"timestamp": "",
+						"nonce": "",
+						"version": "1.0",
+						"realm": "",
+						"encodeSignature": false,
+						"header": true,
+						"includeEmpty": false,
+						"saveToRequest": true
+					},
+					"time": 1473354469347,
+					"name": "customer addresses",
+					"description": "Get Customer Addresses",
+					"collectionId": "f838a2f5-50f8-083e-4dd5-918e25b5999d",
+					"responses": []
+				},
+				{
+					"id": "f650b623-824e-e847-3771-66688b20a669",
+					"headers": "Authorization: OAuth oauth_consumer_key=\"8d7e689aea4761b9b2c049667c283217\",oauth_token=\"ed4ed5b7bd55d58679e094ad92dd72e5\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1473360053\",oauth_nonce=\"TDHmQT\",oauth_version=\"1.0\",oauth_signature=\"n4lLlgHDoYV0%2Fw2HOVe5O%2BZ2YD0%3D\"\n",
+					"url": "{{base_uri}}/{{base_path}}/customers?filter[1][attribute]=email&filter[1][in][0]={{valid_customer_email}}",
+					"preRequestScript": null,
+					"pathVariables": {},
+					"method": "GET",
+					"data": null,
+					"dataMode": "params",
+					"version": 2,
+					"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Response time is less than 300ms\"] = responseTime < 300;",
+					"currentHelper": "oAuth1",
+					"helperAttributes": {
+						"id": "oAuth1",
+						"consumerKey": "8d7e689aea4761b9b2c049667c283217",
+						"consumerSecret": "1b9bb45ee8a93bf293f15b9e7fb95c9b",
+						"token": "ed4ed5b7bd55d58679e094ad92dd72e5",
+						"tokenSecret": "fc9fb9bd83048bccda04d5481c3030a1",
+						"signatureMethod": "HMAC-SHA1",
+						"timestamp": "",
+						"nonce": "",
+						"version": "1.0",
+						"realm": "",
+						"encodeSignature": false,
+						"header": true,
+						"includeEmpty": false,
+						"saveToRequest": true
+					},
+					"time": 1473360069347,
+					"name": "customer by email",
+					"description": "GET Customer By email, \ncustomers?filter[1][attribute]=email&filter[1][in][0]=mary@example.com",
+					"collectionId": "f838a2f5-50f8-083e-4dd5-918e25b5999d",
+					"responses": []
+				}
+			]
+		}
+	],
+	"environments": [
+		{
+			"id": "6b3ab51b-5716-4c21-73b6-81809b1f2e92",
+			"name": "MAG-Test",
+			"values": [
+				{
+					"key": "consumer_key",
+					"value": "8d7e689aea4761b9b2c049667c283217",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "consumer_secret",
+					"value": "1b9bb45ee8a93bf293f15b9e7fb95c9b",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "access_token",
+					"value": "ed4ed5b7bd55d58679e094ad92dd72e5",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "secret_key",
+					"value": "fc9fb9bd83048bccda04d5481c3030a1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "bad_token",
+					"value": "66666666666666666666666666666666",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "base_uri",
+					"value": "http://dockerized-magento.local",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "base_path",
+					"value": "api/rest",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "valid_customer_email",
+					"value": "mary@example.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "invalid_customer_email",
+					"value": "no.such@customer.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "customer_id",
+					"value": "141",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "address_id",
+					"value": "99",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "prod_limit",
+					"value": "3",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"team": null,
+			"timestamp": 1473307321453
+		}
+	],
+	"headerPresets": [
+		{
+			"id": "0a1044ee-bc89-26a9-7c5f-26b3eb551d82",
+			"name": "My Presets",
+			"headers": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Accept-Language",
+					"value": "en-us",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "x-custom-header",
+					"value": "1234",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"timestamp": 1466201279461
+		}
+	],
+	"globals": []
+}
